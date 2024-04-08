@@ -1,0 +1,42 @@
+﻿@page
+@model LR10.Models.RegistrationModel
+
+<h1>Реєстрація на консультацію</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Name">Ім'я прізвище:</label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Email">Email:</label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ConsultationDate">Бажана дата консультації:</label>
+        <input asp-for="ConsultationDate" type="date" class="form-control" id="consultationDate" />
+        <span asp-validation-for="ConsultationDate" class="text-danger"></span>
+        <input type="hidden" asp-for="ConsultationDate" />
+    </div>
+    <div class="form-group">
+        <label asp-for="SelectedProduct">Продукт:</label>
+        <select asp-for="SelectedProduct" class="form-control">
+            <option value="">Оберіть продукт</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="C#">C#</option>
+            <option value="Java">Java</option>
+            <option value="Python">Python</option>
+            <option value="Основи">Основи</option>
+        </select>
+        <span asp-validation-for="SelectedProduct" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Зареєструватися</button>
+</form>
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+}
